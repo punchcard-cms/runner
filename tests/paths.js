@@ -41,10 +41,10 @@ const mySharona = {
 };
 
 test('Simple Paths', t => {
-  const lintPaths = paths(options.tasks.js.lint.paths, options, 'source');
+  const lintPaths = paths(options.tasks.js['lint:node'].paths, options, 'source');
   const jsPaths = paths(options.tasks.js.build.paths, options);
 
-  const lintExpected = ['lib/**/*.js', 'index.js', 'src/js/**/*.js', 'tests/**/*.js'];
+  const lintExpected = ['lib/**/*.js', 'index.js'];
   const jsExpected = ['js/**/*.js'];
 
   t.deepEqual(lintPaths, lintExpected, 'Should expand an array of paths');
