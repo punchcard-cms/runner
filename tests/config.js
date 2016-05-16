@@ -5,15 +5,15 @@ const defaults = require('../lib/defaults');
 
 const userConfig = {
   options: {
-    fail: true
+    fail: true,
   },
   foo: {
-    bar: 'baz'
-  }
+    bar: 'baz',
+  },
 };
 
 test('Default Config', t => {
-  let options = config();
+  const options = config();
 
   t.deepEqual(options, defaults, 'Output matches defaults when no options passed in');
 });
@@ -24,7 +24,7 @@ test('Merged Config', t => {
 
   updated.options.fail = true;
   updated.foo = {
-    bar: 'baz'
+    bar: 'baz',
   };
 
 

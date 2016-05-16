@@ -1,7 +1,6 @@
 'use strict';
 
 const spawn = require('child_process').spawn;
-const paths = require('../lib/paths.js');
 
 //////////////////////////////
 // Gulp Task to run NPM Tasks
