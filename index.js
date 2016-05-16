@@ -2,26 +2,42 @@
 
 const configuration = require('./lib/config');
 
+const browserSync = require('./tasks/browser-sync');
+const npm = require('./tasks/npm');
+const js = require('./tasks/js');
+const nodemon = require('./tasks/nodemon');
+const sass = require('./tasks/sass');
+const imagemin = require('./tasks/imagemin');
+const clean = require('./tasks/clean');
+
+const lint = require('./tasks/lint');
+const watch = require('./tasks/watch');
+const build = require('./tasks/build');
+const help = require('./tasks/help');
+
+const defaults = require('./tasks/default');
+
+
 module.exports = (gulp, options) => {
   const config = configuration(options);
 
   //////////////////////////////
   // Tasks
   //////////////////////////////
-  require('./tasks/browser-sync')(gulp, config);
-  require('./tasks/npm')(gulp, config);
-  require('./tasks/js')(gulp, config);
-  require('./tasks/nodemon')(gulp, config);
-  require('./tasks/sass')(gulp, config);
-  require('./tasks/imagemin')(gulp, config);
-  require('./tasks/clean')(gulp, config);
+  browserSync(gulp, config);
+  npm(gulp, config);
+  js(gulp, config);
+  nodemon(gulp, config);
+  sass(gulp, config);
+  imagemin(gulp, config);
+  clean(gulp, config);
 
-  require('./tasks/lint')(gulp, config);
-  require('./tasks/watch')(gulp, config);
-  require('./tasks/build')(gulp, config);
-  require('./tasks/help')(gulp, config);
+  lint(gulp, config);
+  watch(gulp, config);
+  build(gulp, config);
+  help(gulp, config);
 
-  require('./tasks/default')(gulp, config);
+  defaults(gulp, config);
 };
 
 

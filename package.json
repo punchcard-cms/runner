@@ -6,6 +6,7 @@
   "scripts": {
     "start": "node index.js",
     "test": "npm run nyc",
+    "lint": "eslint index.js lib tasks && eslint -c ./.eslintrc-ava.yml tests",
     "nyc": "nyc --all npm run ava",
     "ava": "ava | tap-diff",
     "ava:watch": "ava --watch | tap-diff"
@@ -23,6 +24,7 @@
   "dependencies": {
     "browser-sync": "^2.12.3",
     "del": "^2.2.0",
+    "eslint-config-punchcard": "^1.0",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.0",
     "gulp-eslint": "^2.0.0",
@@ -39,6 +41,7 @@
   },
   "devDependencies": {
     "ava": "^0.14.0",
+    "eslint": "^2.10.1",
     "nyc": "^6.4.0",
     "tap-diff": "^0.1.1"
   },
