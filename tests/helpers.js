@@ -6,9 +6,9 @@ const options = require('../lib/defaults');
 const obj = {
   foo: {
     bar: {
-      baz: 'qux'
-    }
-  }
+      baz: 'qux',
+    },
+  },
 };
 
 test('Nested Property Find', t => {
@@ -18,26 +18,26 @@ test('Nested Property Find', t => {
 
 
 test('Object By String', t => {
-  t.deepEqual(helpers.objByString(obj, 'foo.bar'), {baz: 'qux'}, 'Should return the value of a nested item');
+  t.deepEqual(helpers.objByString(obj, 'foo.bar'), { baz: 'qux' }, 'Should return the value of a nested item');
   t.deepEqual(helpers.objByString(obj, 'foo.bar.baz'), 'qux', 'Should return the value of a nested item');
   t.is(helpers.objByString(obj, 'foo.baz'), null, 'Should return `null` if not found');
   t.is(helpers.objByString(obj, 'bar'), null, 'Should return `null` if not found');
-})
+});
 
 test('Build Sequence from Object', t => {
   // Sample Config
   const seq = {
     'clean': [
-      'clean'
+      'clean',
     ],
     'lint': [
       'sass:lint',
-      'js:lint'
+      'js:lint',
     ],
     'serve': [
       'build',
-      'serve'
-    ]
+      'serve',
+    ],
   };
 
   // Sample Callback Function, not an actual thing we need to test
@@ -48,17 +48,17 @@ test('Build Sequence from Object', t => {
   // Expected Results
   const results = [
     [
-      'clean'
+      'clean',
     ],
     [
       'sass:lint',
-      'js:lint'
+      'js:lint',
     ],
     [
       'build',
-      'serve'
+      'serve',
     ],
-    cb
+    cb,
   ];
 
   t.deepEqual(helpers.sequence(seq, cb), results, 'Should return an array of arrays with the callback at the end');
@@ -68,16 +68,16 @@ test('Build Sequence from Array', t => {
   // Sample Config
   const seq = [
     [
-      'clean'
+      'clean',
     ],
     [
       'sass:lint',
-      'js:lint'
+      'js:lint',
     ],
     [
       'build',
-      'serve'
-    ]
+      'serve',
+    ],
   ];
 
   // Sample Callback Function, not an actual thing we need to test
@@ -95,8 +95,12 @@ test('Build Sequence from Array', t => {
 
 test('Finds the `_folders` property of top most parent if it exists', t => {
   const folder = helpers.findFolders(options, 'assets.js');
-  const expected = { public: 'public', source: 'src' };
+  const noFolder = helpers.findFolders(options, 'application.library');
+  const expected = {
+    public: 'public',
+    source: 'src',
+  };
 
-  t.deepEqual(helpers.findFolders(options, 'assets.js'), expected, 'Should return the `_folders` object if found');
-  t.deepEqual(helpers.findFolders(options, 'application.library'), {}, 'Should return an empty object if no `_folders` object is found');
+  t.deepEqual(folder, expected, 'Should return the `_folders` object if found');
+  t.deepEqual(noFolder, {}, 'Should return an empty object if no `_folders` object is found');
 });

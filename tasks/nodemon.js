@@ -18,7 +18,7 @@ module.exports = (gulp, options) => {
   gulp.task('nodemon', cb => {
     nodemon({
       script: index,
-      watch: watch,
+      watch,
       ext: options.tasks.nodemon.extension,
     })
     .once('start', () => {

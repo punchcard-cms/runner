@@ -19,7 +19,7 @@ module.exports = (gulp, options) => {
     * Gulp task to lint Sass files
   **/
   gulp.task('sass:lint', () => {
-    return gulp.src(sassPaths)
+    return gulp.src(lintPaths)
       .pipe(lint())
       .pipe(lint.format())
       .pipe(gif(options.options.fail, lint.failOnError()));
