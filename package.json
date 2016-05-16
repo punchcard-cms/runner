@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
+    "pretest": "npm run lint",
     "test": "npm run nyc",
     "lint": "eslint index.js lib tasks && eslint -c ./.eslintrc-ava.yml tests",
     "nyc": "nyc --all npm run ava",
