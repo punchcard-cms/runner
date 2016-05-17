@@ -1,6 +1,7 @@
 'use strict';
 
 const sass = require('gulp-sass');
+const eyeglass = require('eyeglass');
 const lint = require('gulp-sass-lint');
 const paths = require('../lib/paths');
 const gif = require('gulp-if');
@@ -13,7 +14,12 @@ module.exports = (gulp, options) => {
   const sassPaths = paths(options.tasks.sass.build.paths, options, 'source');
   const lintPaths = paths(options.tasks.sass.lint.paths, options, 'source');
   const sassOptions = options.tasks.sass.options;
+  const eyeglassOptions = options.tasks.sass.eyeglass;
   const output = path.join(options.assets._folders.public, options.assets.sass.dest);
+
+  sassOptions.eyeglass = eyeglassOptions;
+
+  console.log(sassOptions);
 
   /**
     * Gulp task to lint Sass files
@@ -32,7 +38,7 @@ module.exports = (gulp, options) => {
   gulp.task('sass', ['sass:lint'], () => {
     return gulp.src(sassPaths)
       .pipe(gif(!options.options.fail, sourcemaps.init()))
-      .pipe(gif(options.options.fail, sass(sassOptions).on('error', sass.logError), sass(sassOptions)))
+      .pipe(gif(options.options.fail, sass(eyeglass(sassOptions)).on('error', sass.logError), sass(eyeglass(sassOptions))))
       .pipe(prefix())
       .pipe(gif(!options.options.fail, sourcemaps.write('./maps')))
       .pipe(gulp.dest(output))
