@@ -19,8 +19,6 @@ module.exports = (gulp, options) => {
 
   sassOptions.eyeglass = eyeglassOptions;
 
-  console.log(sassOptions);
-
   /**
     * Gulp task to lint Sass files
   **/
