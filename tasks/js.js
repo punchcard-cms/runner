@@ -62,6 +62,10 @@ module.exports = (gulp, options) => {
     * Gulp task to watch all JavaScript files and lint on change
   **/
   gulp.task('js:watch', () => {
-    return gulp.watch(lintPaths, ['js']);
+    const watchPaths = Object.keys(lintPaths).map(pth => {
+      return lintPaths[pth];
+    });
+
+    return gulp.watch(watchPaths, ['js']);
   });
 };
