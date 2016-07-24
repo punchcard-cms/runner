@@ -11,7 +11,9 @@
     "nyc": "nyc --all npm run ava",
     "ava": "ava | tap-diff",
     "ava:watch": "ava --watch | tap-diff",
-    "coverage": "nyc report --reporter=text-lcov | coveralls"
+    "coverage": "nyc report --reporter=text-lcov | coveralls",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -39,7 +41,8 @@
     "gulp-sourcemaps": "^1.6.0",
     "gulp-task-listing": "^1.0.1",
     "merge": "^1.2.0",
-    "run-sequence": "^1.1.5"
+    "run-sequence": "^1.1.5",
+    "snyk": "^1.17.1"
   },
   "devDependencies": {
     "ava": "^0.14.0",
@@ -62,5 +65,6 @@
     ],
     "failFast": true,
     "tap": true
-  }
+  },
+  "snyk": true
 }
