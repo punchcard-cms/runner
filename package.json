@@ -36,7 +36,7 @@
     "gulp-nodemon": "^2.0.6",
     "gulp-sass": "^2.2.0",
     "gulp-sass-lint": "^1.1.1",
-    "gulp-sourcemaps": "^1.6.0",
+    "gulp-sourcemaps": "^2.1.0",
     "gulp-task-listing": "^1.0.1",
     "merge": "^1.2.0",
     "run-sequence": "^1.1.5"
