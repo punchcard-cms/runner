@@ -35,7 +35,7 @@
     "gulp-if": "^2.0",
     "gulp-imagemin": "^3.0",
     "gulp-nodemon": "^2.2",
-    "gulp-sass": "^2.3",
+    "gulp-sass": "^3.0.0",
     "gulp-sass-lint": "^1.2",
     "gulp-sourcemaps": "^1.1",
     "gulp-task-listing": "^1.0",
