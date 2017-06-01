@@ -1,6 +1,5 @@
 {
   "name": "punchcard-runner",
-  "version": "2.1.2",
   "description": "A set of Gulp tasks to ease development of Node projects",
   "main": "index.js",
   "scripts": {
@@ -11,11 +10,13 @@
     "nyc": "nyc --all npm run ava",
     "ava": "ava | tap-diff",
     "ava:watch": "ava --watch | tap-diff",
-    "coverage": "nyc report --reporter=text-lcov | coveralls"
+    "coverage": "nyc report --reporter=text-lcov | coveralls",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post",
+    "reparo": "reparo -b master"
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:punchcard-cms/runner.git"
+    "url": "https://github.com/punchcard-cms/runner.git"
   },
   "keywords": [
     "gulp",
@@ -24,29 +25,43 @@
   "author": "Sam Richard <snugug@us.ibm.com>",
   "license": "Apache-2.0",
   "dependencies": {
-    "browser-sync": "^2.12.3",
-    "del": "^2.2.0",
+    "browser-sync": "^2.17",
+    "del": "^2.2",
     "eslint-config-punchcard": "^1.0",
-    "eyeglass": "^0.8.3",
-    "gulp": "^3.9.1",
-    "gulp-autoprefixer": "^3.1.0",
-    "gulp-eslint": "^2.0.0",
-    "gulp-if": "^2.0.0",
-    "gulp-imagemin": "^3.0.1",
-    "gulp-nodemon": "^2.0.6",
-    "gulp-sass": "^2.2.0",
-    "gulp-sass-lint": "^1.1.1",
-    "gulp-sourcemaps": "^1.6.0",
-    "gulp-task-listing": "^1.0.1",
+    "eyeglass": "^1.1",
+    "gulp": "^3.9",
+    "gulp-autoprefixer": "^3.1",
+    "gulp-eslint": "^3.0",
+    "gulp-if": "^2.0",
+    "gulp-imagemin": "^3.0",
+    "gulp-nodemon": "^2.2",
+    "gulp-sass": "^2.3",
+    "gulp-sass-lint": "^1.2",
+    "gulp-sourcemaps": "^1.1",
+    "gulp-task-listing": "^1.0",
     "merge": "^1.2.0",
-    "run-sequence": "^1.1.5"
+    "run-sequence": "^1.2"
   },
   "devDependencies": {
-    "ava": "^0.14.0",
-    "coveralls": "^2.11.9",
-    "eslint": "^3.6.0",
+    "ava": "^0.16",
+    "coveralls": "^2.11",
+    "eslint": "^3.7",
+    "ghooks": "^1.3.2",
     "nyc": "^6.4.0",
+    "punchcard-commit-msg": "^1.0",
+    "punchcard-semantic-release": "^2.0",
+    "reparo": "^1.1.1-0",
+    "semantic-release": "^4.3",
     "tap-diff": "^0.1.1"
+  },
+  "config": {
+    "ghooks": {
+      "commit-msg": "punchcard-commit-msg"
+    }
+  },
+  "release": {
+    "analyzeCommits": "punchcard-semantic-release/analyze",
+    "generateNotes": "punchcard-semantic-release/notes"
   },
   "nyc": {
     "exclude": [
@@ -62,5 +77,8 @@
     ],
     "failFast": true,
     "tap": true
+  },
+  "engines": {
+    "node": "^6"
   }
 }
