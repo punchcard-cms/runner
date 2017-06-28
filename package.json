@@ -1,6 +1,7 @@
 {
   "name": "punchcard-runner",
   "description": "A set of Gulp tasks to ease development of Node projects",
+  "version": "0.0.0",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
