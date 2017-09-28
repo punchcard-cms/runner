@@ -13,7 +13,9 @@
     "ava:watch": "ava --watch | tap-diff",
     "coverage": "nyc report --reporter=text-lcov | coveralls",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post",
-    "reparo": "reparo -b master"
+    "reparo": "reparo -b master",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -42,7 +44,8 @@
     "gulp-task-listing": "^1.0",
     "merge": "^1.2.0",
     "minimatch": "^3.0.4",
-    "run-sequence": "^1.2"
+    "run-sequence": "^1.2",
+    "snyk": "^1.41.1"
   },
   "devDependencies": {
     "ava": "^0.19.1",
@@ -82,5 +85,6 @@
   },
   "engines": {
     "node": "^6"
-  }
+  },
+  "snyk": true
 }
