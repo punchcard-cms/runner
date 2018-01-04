@@ -30,7 +30,7 @@
     "del": "^2.2",
     "eslint-config-punchcard": "^1.0",
     "eyeglass": "^1.1",
-    "gulp": "^3.9.1",
+    "gulp": "^4.0.0",
     "gulp-autoprefixer": "^4.0.0",
     "gulp-eslint": "^3.0",
     "gulp-if": "^2.0",
