@@ -1,0 +1,40 @@
+# Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
+version: v1.13.5
+ignore: {}
+# patches apply the minimum changes required to fix a vulnerability
+patch:
+  SNYK-JS-LODASH-450202:
+    - gulp-eslint > eslint > inquirer > lodash:
+        patched: '2019-07-04T02:48:53.823Z'
+    - browser-sync > easy-extender > lodash:
+        patched: '2019-07-04T02:48:53.823Z'
+    - eyeglass > node-sass > lodash:
+        patched: '2019-07-04T02:48:53.823Z'
+    - gulp-sass > node-sass > lodash:
+        patched: '2019-07-04T02:48:53.823Z'
+    - gulp-sass-lint > sass-lint > eslint > lodash:
+        patched: '2019-07-04T02:48:53.823Z'
+    - gulp-eslint > eslint > table > lodash:
+        patched: '2019-07-04T02:48:53.823Z'
+    - gulp-sass-lint > sass-lint > globule > lodash:
+        patched: '2019-07-04T02:48:53.823Z'
+    - eyeglass > node-sass > sass-graph > lodash:
+        patched: '2019-07-04T02:48:53.823Z'
+    - gulp-eslint > eslint > lodash:
+        patched: '2019-07-04T02:48:53.823Z'
+    - eslint-config-punchcard > babel-eslint > babel-types > lodash:
+        patched: '2019-07-04T02:48:53.823Z'
+    - eslint-config-punchcard > babel-eslint > babel-traverse > lodash:
+        patched: '2019-07-04T02:48:53.823Z'
+    - gulp-sass > node-sass > sass-graph > lodash:
+        patched: '2019-07-04T02:48:53.823Z'
+    - eslint-config-punchcard > babel-eslint > babel-traverse > babel-types > lodash:
+        patched: '2019-07-04T02:48:53.823Z'
+    - gulp-sass-lint > sass-lint > eslint > inquirer > lodash:
+        patched: '2019-07-04T02:48:53.823Z'
+    - gulp-sass > node-sass > gaze > globule > lodash:
+        patched: '2019-07-04T02:48:53.823Z'
+    - gulp-sass-lint > sass-lint > eslint > table > lodash:
+        patched: '2019-07-04T02:48:53.823Z'
+    - eyeglass > node-sass > gaze > globule > lodash:
+        patched: '2019-07-04T02:48:53.823Z'
