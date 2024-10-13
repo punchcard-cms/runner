@@ -27,7 +27,7 @@
   "license": "Apache-2.0",
   "dependencies": {
     "browser-sync": "^2.18.8",
-    "del": "^2.2",
+    "del": "^8.0.0",
     "eslint-config-punchcard": "^1.0",
     "eyeglass": "^1.1",
     "gulp": "^3.9.1",
